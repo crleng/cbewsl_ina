@@ -30,7 +30,7 @@ import { updateProfile } from "../../apis/ProfileUpdating";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-import PromptModal from "../marirong/modals/PromptModal";
+import PromptModal from "../interfaces/modals/PromptModal";
 
 const ProfileSettings = () => {
   let navigate = useNavigate();

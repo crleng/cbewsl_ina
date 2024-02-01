@@ -10,8 +10,8 @@ import {
   Grid,
 } from "@mui/material";
 import { Link } from "@material-ui/core";
-import UserProfileModal from "../marirong/modals/UserProfileModal";
-import PromptModal from "../marirong/modals/PromptModal";
+import UserProfileModal from "../interfaces/modals/UserProfileModal";
+import PromptModal from "../interfaces/modals/PromptModal";
 import { signIn, forgotPassword, verifyOTP } from "../../apis/UserManagement";
 import { getNumberOfFiles } from "../../apis/Misc";
 

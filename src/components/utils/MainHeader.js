@@ -35,7 +35,7 @@ import { SignInLogo } from "./SignInLogo";
 
 import { CBEWSL_SITE_NAME } from "../../host";
 
-const BakunHeader = () => {
+const MainHeader = () => {
   let navigate = useNavigate();
   const [value, setValue] = useState(0);
   const [server_time, setServerTime] = useState("");
@@ -199,8 +199,15 @@ const BakunHeader = () => {
   return (
     <Fragment>
       <Grid container spacing={0} style={{ background: "white" }}>
-        <Grid item xs={12} sm={4} md={4} lg={4} sx={{ marginTop: 1, marginBottom: 2 }}>
-          <SignInLogo/>
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          md={4}
+          lg={4}
+          sx={{ marginTop: 1, marginBottom: 2 }}
+        >
+          <SignInLogo />
         </Grid>
 
         <Grid item xs={12} sm={6} md={6} lg={6}>
@@ -559,4 +566,4 @@ const BakunHeader = () => {
   );
 };
 
-export default BakunHeader;
+export default MainHeader;
