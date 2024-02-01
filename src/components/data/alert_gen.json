@@ -1,0 +1,171 @@
+{
+  "on_going": "{\"latest\": [{\"releases\": [{\"with_retrigger_validation\": false, \"release_time\": \"17:12:00\", \"release_id\": 55892, \"data_ts\": \"2023-11-23 18:30:00\", \"bulletin_number\": 97, \"trigger_list\": \"SmR\", \"comments\": \"\"}], \"event\": {\"validity\": \"2023-11-25 20:00:00\", \"site\": {\"season\": 2, \"barangay\": \"Poblacion\", \"province\": \"Benguet\", \"sitio\": null, \"has_cbewsl\": 0, \"site_code\": \"bak\", \"area_code\": 74, \"households\": \"At least 31 households, Roman Catholic Church\", \"longitude\": 120.660903, \"latitude\": 16.789631, \"site_id\": 2, \"is_mlgu_handled\": 0, \"municipality\": \"Bakun\", \"region\": \"CAR\", \"purok\": null}, \"site_id\": 2, \"event_id\": 12684, \"status\": \"2\", \"event_start\": \"2023-11-23 16:30:00\"}, \"ts_start\": \"2023-11-23 18:30:00\", \"event_alert_id\": 4632, \"ts_end\": null, \"public_alert_symbol\": {\"alert_symbol\": \"A3\", \"recommended_response\": \"Evacuate.\", \"duration\": 48, \"alert_level\": 3, \"pub_sym_id\": 4, \"alert_type\": \"event\"}, \"internal_alert_level\": \"A3-SmR\", \"sent_statuses\": {\"is_sms_sent\": false, \"is_bulletin_sent\": false, \"sms\": null, \"bulletin\": null}, \"is_onset_release\": true, \"prescribed_release_time\": \"2023-11-23 20:00:00\", \"latest_event_triggers\": [{\"ts\": \"2023-11-23 18:30:00\", \"release_id\": 55892, \"trigger_misc\": null, \"info\": \"BAKTC (node 1) exceeded velocity threshold\", \"internal_sym\": {\"alert_symbol\": \"S\", \"internal_sym_id\": 1, \"trigger_sym_id\": 4, \"trigger_symbol\": {\"alert_symbol\": \"s3\", \"trigger_sym_id\": 4, \"trigger_hierarchy\": {\"data_presence\": 2, \"trigger_source\": \"subsurface\", \"is_active\": 1, \"data_interval\": \"continuous\", \"hierarchy_id\": 1, \"source_id\": 1, \"is_ground\": 1, \"is_default\": 1}, \"alert_description\": \"critical movement based on subsurface sensor\", \"alert_level\": 3, \"source_id\": 1}, \"alert_description\": null}, \"trigger_id\": 14442}, {\"ts\": \"2023-11-23 17:01:00\", \"release_id\": 55891, \"trigger_misc\": {\"on_demand\": null, \"moms_releases\": [{\"moms_id\": 477, \"release_id\": null, \"moms_details\": {\"moms_id\": 477, \"observance_ts\": \"2023-11-23 17:01:00\", \"narrative\": {\"timestamp\": \"2023-11-23 18:31:13\", \"type_id\": 2, \"user_id\": 1239, \"narrative\": \"Crack - at the back of PHIVOLCS building: Ilang crack ang nakita?: 1\\nGaano kahaba?: 2m\\nGaano kalapad?: 1m\\nAno ang lalim nito?: 1.5m\\nAno ang oryentasyon o direksyon?: pa-north\\nGaano kalaki ang pagbabago? (Kung luma): wala\", \"user_details\": {\"birthday\": \"2023-10-19\", \"user_id\": 1239, \"middle_name\": \"test2\", \"sex\": \"Male\", \"salutation\": null, \"nickname\": \"test3\", \"suffix\": \"A\", \"ewi_recipient\": null, \"last_name\": \"test2\", \"ground_reminder_recipient\": null, \"first_name\": \"test3\", \"status\": null, \"send_routine_sms\": null}, \"id\": 165505}, \"remarks\": \"sabi ni balbs bumuka daw lupa\", \"reporter\": {\"salutation\": \"NA\", \"last_name\": \"Bognot\", \"first_name\": \"Prado Arturo\"}, \"op_trigger\": 2, \"validator\": {\"last_name\": \"test2\", \"first_name\": \"test3\"}, \"moms_instance\": {\"location\": \"at the back of PHIVOLCS building\", \"feature\": {\"description\": null, \"feature_id\": 1, \"feature_type\": \"crack\"}, \"instance_id\": 180, \"site_id\": 2, \"feature_name\": \"I\"}}, \"moms_rel_id\": 269}], \"od_id\": null, \"eq_id\": null, \"trig_misc_id\": 361, \"has_moms\": true, \"eq\": null}, \"info\": \"Crack observed\", \"internal_sym\": {\"alert_symbol\": \"m\", \"internal_sym_id\": 13, \"trigger_sym_id\": 10, \"trigger_symbol\": {\"alert_symbol\": \"m2\", \"trigger_sym_id\": 10, \"trigger_hierarchy\": {\"data_presence\": 2, \"trigger_source\": \"moms\", \"is_active\": 1, \"data_interval\": \"discrete\", \"hierarchy_id\": 3, \"source_id\": 6, \"is_ground\": 1, \"is_default\": 1}, \"alert_description\": \"significant movement based on manifestation of movement as observed by community\", \"alert_level\": 2, \"source_id\": 6}, \"alert_description\": null}, \"trigger_id\": 14441}, {\"ts\": \"2023-11-23 16:30:00\", \"release_id\": 55890, \"trigger_misc\": null, \"info\": \"RAIN BAKG (on-site rain gauge): 1-day cumulative rainfall exceeded threshold (138.99 mm / 115.83 mm)\", \"internal_sym\": {\"alert_symbol\": \"R\", \"internal_sym_id\": 8, \"trigger_sym_id\": 14, \"trigger_symbol\": {\"alert_symbol\": \"r1\", \"trigger_sym_id\": 14, \"trigger_hierarchy\": {\"data_presence\": 1, \"trigger_source\": \"rainfall\", \"is_active\": 1, \"data_interval\": \"continuous\", \"hierarchy_id\": 4, \"source_id\": 3, \"is_ground\": 0, \"is_default\": 1}, \"alert_description\": \"rainfall above threshold\", \"alert_level\": 1, \"source_id\": 3}, \"alert_description\": null}, \"trigger_id\": 14440}], \"highest_event_alert_level\": 3}], \"extended\": [], \"overdue\": [], \"routine\": {}, \"invalids\": [], \"has_shifted_sites_to_routine\": false}",
+  "candidate_alerts": "[]",
+  "ewi_templates": [
+    {
+      "lewc_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nMag-obserba sa paligid, magsukat, at magpadala ng sukat sa MDRRMO tuwing Routine Monitoring\n",
+      "barangay_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nSuportahan ang LEWC sa pagmo-monitor\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, at Dynaslope Project\n",
+      "commmunity_response": "Magpatuloy sa pang-araw-araw na gawain",
+      "plgu_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "trigger": "",
+      "alert_level": 0,
+      "id": 1,
+      "trigger_description": "Walang nakitang paggalaw sa lupa."
+    },
+    {
+      "lewc_response": "Magsukat ng surficial markers at mag-obserba sa paligid bago mag-7:30 AM, 11:30 AM, at 3:30 PM, at iradyo ang datos sa MDRRMO.\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk.\n",
+      "barangay_response": "Suportahan ang LEWC sa pagmo-monitor\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk.\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, at Dynaslope Project\n",
+      "commmunity_response": "Maghandang rumesponde kung tumaas ang alert sa Alert 2 at Alert 3.\n\nKung dahil sa ulan, talian ang mga bubong o lagyan ng pabigat kung kinakailangan.\n\nMag-obserba sa paligid kung may pagbabago sa landslide features. I-report ang mga ito sa LEWC at BLGU.\n\nMakibalita sa radyo, TV, sound system, at sa BLGU at LEWC.",
+      "plgu_response": "Maghanda kung sakaling manghingi ng tulong ang MDRRMO.",
+      "trigger": "rainfall",
+      "alert_level": 1,
+      "id": 2,
+      "trigger_description": "May malakas o matagal na ulan na maaaring magdulot ng landslide"
+    },
+    {
+      "lewc_response": "Magsukat ng surficial markers at mag-obserba sa paligid bago mag-7:30 AM, 11:30 AM, at 3:30 PM, at iradyo ang datos sa MDRRMO.\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk.\n",
+      "barangay_response": "Suportahan ang LEWC sa pagmo-monitor\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk.\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, at Dynaslope Project\n",
+      "commmunity_response": "Maghandang rumesponde kung tumaas ang alert sa Alert 2 at Alert 3.\n\nKung dahil sa lindol, maghanda para sa mga posibleng aftershocks.\n\nMag-obserba sa paligid kung may pagbabago sa landslide features. I-report ang mga ito sa LEWC at BLGU.\n\nMakibalita sa radyo, TV, sound system, at sa BLGU at LEWC.",
+      "plgu_response": "Maghanda kung sakaling manghingi ng tulong ang MDRRMO.",
+      "trigger": "earthquake",
+      "alert_level": 1,
+      "id": 3,
+      "trigger_description": "May lindol na maaaring magdulot ng landslide"
+    },
+    {
+      "lewc_response": "Tulungan ang mga households at risk sa paghahanda para sa evacuation.  Suportahan ang LEWC sa pagmo-monitor. Antabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. Paalalahanan ang households at risk sa dapat gawin.  Makipag-coordinate sa MLGU para sa mobility asset at posibleng pag-evacuate. ",
+      "barangay_response": "Tulungan ang mga households at risk sa paghahanda para sa evacuation.\n\nSuportahan ang LEWC sa pagmo-monitor\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. Paalalahanan ang households at risk sa dapat gawin.\n\nMakipag-coordinate sa MLGU para sa mobility asset at posibleng pag-evacuate.\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, Dynaslope Project, at iba pang ahensya tuwing 08:00 AM, 12:00 NN, 04:00 PM, 08:00 PM, 12:00 MN, at 04:00 AM.\n\nPersonal na pumunta sa site para maghanda sa paglikas ng mga households at risk.\n\nMag-standby at maghanda para sa emergency response. Maghanda ng relief goods (food and non-food items) para sa maaaring evacuation.\n\nMakipag-coordinate sa PDRRMO tungkol sa sitwasyon sa site. Mag-submit ng situational report sa PLGU.\n\nMagsagawa ng emergency meeting. Magbigay ng update sa local chief executive (Mayor), department heads (MSWDO, MEO, BFP, PNP, MHO, at MAO) and employees, at transport groups (e.g., tricycle, jeep) tungkol sa sitwasyon sa site.\n\nMagsagawa ng post-disaster needs assessment (PDNA) pagkatapos ng alert.\n",
+      "commmunity_response": "Maghandang mag-evacuate.\n\nMaghanda ng Go Bag na sasapat para sa tatlong araw. Siguruhing mayroong pagkain, tubig, gamot, damit, mahahalagang papeles, flashlight, first aid kit, radio, at iba pa.\n\nMag-obserba sa paligid kung may pagbabago sa landslide features. I-report ang mga ito sa LEWC at BLGU.\n\nMakibalita sa radio, TV, sound system, at sa BLGU at LEWC.\n",
+      "plgu_response": "Makipag-coordinate sa MDRRMO kaugnay sa preparation and response.",
+      "trigger": "surficial",
+      "alert_level": 2,
+      "id": 4,
+      "trigger_description": "May pagbabago sa sukat ng surficial markers."
+    },
+    {
+      "lewc_response": "Tulungan ang mga households at risk sa paghahanda para sa evacuation.  Suportahan ang LEWC sa pagmo-monitor. Antabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. Paalalahanan ang households at risk sa dapat gawin.  Makipag-coordinate sa MLGU para sa mobility asset at posibleng pag-evacuate. ",
+      "barangay_response": "Tulungan ang mga households at risk sa paghahanda para sa evacuation.\n\nSuportahan ang LEWC sa pagmo-monitor\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. Paalalahanan ang households at risk sa dapat gawin.\n\nMakipag-coordinate sa MLGU para sa mobility asset at posibleng pag-evacuate.\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, Dynaslope Project, at iba pang ahensya tuwing 08:00 AM, 12:00 NN, 04:00 PM, 08:00 PM, 12:00 MN, at 04:00 AM.\n\nPersonal na pumunta sa site para maghanda sa paglikas ng mga households at risk.\n\nMag-standby at maghanda para sa emergency response. Maghanda ng relief goods (food and non-food items) para sa maaaring evacuation.\n\nMakipag-coordinate sa PDRRMO tungkol sa sitwasyon sa site. Mag-submit ng situational report sa PLGU.\n\nMagsagawa ng emergency meeting. Magbigay ng update sa local chief executive (Mayor), department heads (MSWDO, MEO, BFP, PNP, MHO, at MAO) and employees, at transport groups (e.g., tricycle, jeep) tungkol sa sitwasyon sa site.\n\nMagsagawa ng post-disaster needs assessment (PDNA) pagkatapos ng alert.\n",
+      "commmunity_response": "Maghandang mag-evacuate.\n\nMaghanda ng Go Bag na sasapat para sa tatlong araw. Siguruhing mayroong pagkain, tubig, gamot, damit, mahahalagang papeles, flashlight, first aid kit, radio, at iba pa.\n\nMag-obserba sa paligid kung may pagbabago sa landslide features. I-report ang mga ito sa LEWC at BLGU.\n\nMakibalita sa radio, TV, sound system, at sa BLGU at LEWC.\n",
+      "plgu_response": "Makipag-coordinate sa MDRRMO kaugnay sa preparation and response.",
+      "trigger": "moms",
+      "alert_level": 2,
+      "id": 5,
+      "trigger_description": "May pagbabago sa landslide features."
+    },
+    {
+      "lewc_response": "Tulungan ang mga households at risk sa paghahanda para sa evacuation.  Suportahan ang LEWC sa pagmo-monitor. Antabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. Paalalahanan ang households at risk sa dapat gawin.  Makipag-coordinate sa MLGU para sa mobility asset at posibleng pag-evacuate. ",
+      "barangay_response": "Tulungan ang mga households at risk sa paghahanda para sa evacuation.\n\nSuportahan ang LEWC sa pagmo-monitor\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. Paalalahanan ang households at risk sa dapat gawin.\n\nMakipag-coordinate sa MLGU para sa mobility asset at posibleng pag-evacuate.\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, Dynaslope Project, at iba pang ahensya tuwing 08:00 AM, 12:00 NN, 04:00 PM, 08:00 PM, 12:00 MN, at 04:00 AM.\n\nPersonal na pumunta sa site para maghanda sa paglikas ng mga households at risk.\n\nMag-standby at maghanda para sa emergency response. Maghanda ng relief goods (food and non-food items) para sa maaaring evacuation.\n\nMakipag-coordinate sa PDRRMO tungkol sa sitwasyon sa site. Mag-submit ng situational report sa PLGU.\n\nMagsagawa ng emergency meeting. Magbigay ng update sa local chief executive (Mayor), department heads (MSWDO, MEO, BFP, PNP, MHO, at MAO) and employees, at transport groups (e.g., tricycle, jeep) tungkol sa sitwasyon sa site.\n\nMagsagawa ng post-disaster needs assessment (PDNA) pagkatapos ng alert.\n",
+      "commmunity_response": "Maghandang mag-evacuate.\n\nMaghanda ng Go Bag na sasapat para sa tatlong araw. Siguruhing mayroong pagkain, tubig, gamot, damit, mahahalagang papeles, flashlight, first aid kit, radio, at iba pa.\n\nMag-obserba sa paligid kung may pagbabago sa landslide features. I-report ang mga ito sa LEWC at BLGU.\n\nMakibalita sa radio, TV, sound system, at sa BLGU at LEWC.\n",
+      "plgu_response": "Makipag-coordinate sa MDRRMO kaugnay sa preparation and response.",
+      "trigger": "subsurface",
+      "alert_level": 2,
+      "id": 6,
+      "trigger_description": "May paggalaw sa ilalim ng lupa."
+    },
+    {
+      "lewc_response": "I-evacuate ang households at risk. Tulungan ang mga may kapansanan, buntis, bata, senior citizen, at iba pang vulnerable sectors.\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. \n",
+      "barangay_response": "Magpatupad ang forced evacuation sa households at risk. Tulungan ang mga may kapansanan, buntis, bata, senior citizen, at iba pang vulnerable sectors.\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. \n\nMagsukat ng surficial markers at mag-obserba sa paligid kung ligtas ang kondisyon kasama ang LEWC at MDRRMO.\n\nPamunuan ang evacuation kasama ang MSWDO at MDRRMO hanggang makarating at maka-settle ang lahat sa evacuation area.\n\nIhanda ang profile data ng households at risk para sa pag-account at para sa relief distribution. I-account ang bawat tao.\n\nMagsagawa ng evaluation pagkatapos ng alert. Magpasa ng situational report sa MDRRMO na may kasamang documentation.\n",
+      "mlgu_response": "Magpatupad ng forced evacuation sa households at risk.\n\nMagpatuloy sa pag-monitor ng datos mula sa LEWC o BLGU at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, Dynaslope Project, at iba pang ahensya tuwing 08:00 AM, 12:00 NN, 04:00 PM, 08:00 PM, 12:00 MN, at 04:00 AM.\n\nSuportahan ang LEWC at BLGU sa pagsusukat ng surficial markers at pag-oobserba sa paligid kung ligtas ang kondisyon.\n\nMagsagawa ng emergency response. Magpamahagi ng relief goods (food and non-food items) sa evacuees, kasama ng MSWDO at MDRRMO. Magkaroon ng health consultations at pamimigay ng mga vitamins at common medicines para sa mga evacuees. Magkaroon ng standby vehicle at personnel sa evacuation site.\n\nMakipag-coordinate sa PDRRMO tungkol sa sitwasyon sa site. Mag-submit ng situational report sa PLGU.\n\nMagsagawa ng emergency meeting. Magbigay ng update sa local chief executive (Mayor), department heads (MSWDO, MEO, BFP, PNP, MHO, at MAO) and employees, at transport groups (e.g., tricycle, jeep) tungkol sa sitwasyon sa site.\n\nMakipag-coordinate sa ibang NGOs at mga katabing munisipyo para sa assistance at support, kung kinakailangan.\n\nMagsagawa ng post-disaster needs assessment (PDNA) pagkatapos ng alert.\n",
+      "commmunity_response": "Mag-evacuate. I-secure ang pamilya. Tulungan ang mga may kapansanan, buntis, bata, senior citizen, at iba pang vulnerable sectors.\n\nMakibalita sa BLGU at LEWC. Mag-abang ng mga announcement sa megaphone, sound system, o batingting.\n",
+      "plgu_response": "Makipag-coordinate sa MDRRMO kaugnay sa preparation and response.\n\nMagbigay ng assistance at suporta sa MLGU sa pamamagitan ng mga transportation, relief, food packs, clearing operations (via PEO), additional manpower, at iba pa (mula sa iba pang provincial agencies).\n\nMakipag-coordinate sa NGAs na maaaring sumuporta sa response.\n",
+      "trigger": "surficial",
+      "alert_level": 3,
+      "id": 7,
+      "trigger_description": "May kritikal na pagbabago sa sukat ng surficial markers."
+    },
+    {
+      "lewc_response": "I-evacuate ang households at risk. Tulungan ang mga may kapansanan, buntis, bata, senior citizen, at iba pang vulnerable sectors.\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. \n",
+      "barangay_response": "Magpatupad ang forced evacuation sa households at risk. Tulungan ang mga may kapansanan, buntis, bata, senior citizen, at iba pang vulnerable sectors.\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. \n\nMagsukat ng surficial markers at mag-obserba sa paligid kung ligtas ang kondisyon kasama ang LEWC at MDRRMO.\n\nPamunuan ang evacuation kasama ang MSWDO at MDRRMO hanggang makarating at maka-settle ang lahat sa evacuation area.\n\nIhanda ang profile data ng households at risk para sa pag-account at para sa relief distribution. I-account ang bawat tao.\n\nMagsagawa ng evaluation pagkatapos ng alert. Magpasa ng situational report sa MDRRMO na may kasamang documentation.\n",
+      "mlgu_response": "Magpatupad ng forced evacuation sa households at risk.\n\nMagpatuloy sa pag-monitor ng datos mula sa LEWC o BLGU at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, Dynaslope Project, at iba pang ahensya tuwing 08:00 AM, 12:00 NN, 04:00 PM, 08:00 PM, 12:00 MN, at 04:00 AM.\n\nSuportahan ang LEWC at BLGU sa pagsusukat ng surficial markers at pag-oobserba sa paligid kung ligtas ang kondisyon.\n\nMagsagawa ng emergency response. Magpamahagi ng relief goods (food and non-food items) sa evacuees, kasama ng MSWDO at MDRRMO. Magkaroon ng health consultations at pamimigay ng mga vitamins at common medicines para sa mga evacuees. Magkaroon ng standby vehicle at personnel sa evacuation site.\n\nMakipag-coordinate sa PDRRMO tungkol sa sitwasyon sa site. Mag-submit ng situational report sa PLGU.\n\nMagsagawa ng emergency meeting. Magbigay ng update sa local chief executive (Mayor), department heads (MSWDO, MEO, BFP, PNP, MHO, at MAO) and employees, at transport groups (e.g., tricycle, jeep) tungkol sa sitwasyon sa site.\n\nMakipag-coordinate sa ibang NGOs at mga katabing munisipyo para sa assistance at support, kung kinakailangan.\n\nMagsagawa ng post-disaster needs assessment (PDNA) pagkatapos ng alert.\n",
+      "commmunity_response": "Mag-evacuate. I-secure ang pamilya. Tulungan ang mga may kapansanan, buntis, bata, senior citizen, at iba pang vulnerable sectors.\n\nMakibalita sa BLGU at LEWC. Mag-abang ng mga announcement sa megaphone, sound system, o batingting.\n",
+      "plgu_response": "Makipag-coordinate sa MDRRMO kaugnay sa preparation and response.\n\nMagbigay ng assistance at suporta sa MLGU sa pamamagitan ng mga transportation, relief, food packs, clearing operations (via PEO), additional manpower, at iba pa (mula sa iba pang provincial agencies).\n\nMakipag-coordinate sa NGAs na maaaring sumuporta sa response.\n",
+      "trigger": "moms",
+      "alert_level": 3,
+      "id": 8,
+      "trigger_description": "May kritikal na pagbabago sa landslide features."
+    },
+    {
+      "lewc_response": "I-evacuate ang households at risk. Tulungan ang mga may kapansanan, buntis, bata, senior citizen, at iba pang vulnerable sectors.\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. \n",
+      "barangay_response": "Magpatupad ang forced evacuation sa households at risk. Tulungan ang mga may kapansanan, buntis, bata, senior citizen, at iba pang vulnerable sectors.\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk. \n\nMagsukat ng surficial markers at mag-obserba sa paligid kung ligtas ang kondisyon kasama ang LEWC at MDRRMO.\n\nPamunuan ang evacuation kasama ang MSWDO at MDRRMO hanggang makarating at maka-settle ang lahat sa evacuation area.\n\nIhanda ang profile data ng households at risk para sa pag-account at para sa relief distribution. I-account ang bawat tao.\n\nMagsagawa ng evaluation pagkatapos ng alert. Magpasa ng situational report sa MDRRMO na may kasamang documentation.\n",
+      "mlgu_response": "Magpatupad ng forced evacuation sa households at risk.\n\nMagpatuloy sa pag-monitor ng datos mula sa LEWC o BLGU at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, Dynaslope Project, at iba pang ahensya tuwing 08:00 AM, 12:00 NN, 04:00 PM, 08:00 PM, 12:00 MN, at 04:00 AM.\n\nSuportahan ang LEWC at BLGU sa pagsusukat ng surficial markers at pag-oobserba sa paligid kung ligtas ang kondisyon.\n\nMagsagawa ng emergency response. Magpamahagi ng relief goods (food and non-food items) sa evacuees, kasama ng MSWDO at MDRRMO. Magkaroon ng health consultations at pamimigay ng mga vitamins at common medicines para sa mga evacuees. Magkaroon ng standby vehicle at personnel sa evacuation site.\n\nMakipag-coordinate sa PDRRMO tungkol sa sitwasyon sa site. Mag-submit ng situational report sa PLGU.\n\nMagsagawa ng emergency meeting. Magbigay ng update sa local chief executive (Mayor), department heads (MSWDO, MEO, BFP, PNP, MHO, at MAO) and employees, at transport groups (e.g., tricycle, jeep) tungkol sa sitwasyon sa site.\n\nMakipag-coordinate sa ibang NGOs at mga katabing munisipyo para sa assistance at support, kung kinakailangan.\n\nMagsagawa ng post-disaster needs assessment (PDNA) pagkatapos ng alert.\n",
+      "commmunity_response": "Mag-evacuate. I-secure ang pamilya. Tulungan ang mga may kapansanan, buntis, bata, senior citizen, at iba pang vulnerable sectors.\n\nMakibalita sa BLGU at LEWC. Mag-abang ng mga announcement sa megaphone, sound system, o batingting.\n",
+      "plgu_response": "Makipag-coordinate sa MDRRMO kaugnay sa preparation and response.\n\nMagbigay ng assistance at suporta sa MLGU sa pamamagitan ng mga transportation, relief, food packs, clearing operations (via PEO), additional manpower, at iba pa (mula sa iba pang provincial agencies).\n\nMakipag-coordinate sa NGAs na maaaring sumuporta sa response.\n",
+      "trigger": "subsurface",
+      "alert_level": 3,
+      "id": 9,
+      "trigger_description": "May kritikal na paggalaw sa ilalim ng lupa."
+    },
+    {
+      "lewc_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nMag-obserba sa paligid, magsukat, at magpadala ng sukat sa MDRRMO tuwing Routine Monitoring\n",
+      "barangay_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nSuportahan ang LEWC sa pagmo-monitor\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, at Dynaslope Project\n",
+      "commmunity_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "plgu_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "trigger": "moms",
+      "alert_level": 0,
+      "id": 10,
+      "trigger_description": "Walang bagong MOMs"
+    },
+    {
+      "lewc_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nMag-obserba sa paligid, magsukat, at magpadala ng sukat sa MDRRMO tuwing Routine Monitoring\n",
+      "barangay_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nSuportahan ang LEWC sa pagmo-monitor\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, at Dynaslope Project\n",
+      "commmunity_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "plgu_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "trigger": "surficial",
+      "alert_level": 0,
+      "id": 11,
+      "trigger_description": "Walang malaking pagbabago sa sukat"
+    },
+    {
+      "lewc_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nMag-obserba sa paligid, magsukat, at magpadala ng sukat sa MDRRMO tuwing Routine Monitoring\n",
+      "barangay_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nSuportahan ang LEWC sa pagmo-monitor\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, at Dynaslope Project\n",
+      "commmunity_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "plgu_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "trigger": "subsurface",
+      "alert_level": 0,
+      "id": 12,
+      "trigger_description": "Walang malaking paggalaw sa ilalim ng lupa"
+    },
+    {
+      "lewc_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nMag-obserba sa paligid, magsukat, at magpadala ng sukat sa MDRRMO tuwing Routine Monitoring\n",
+      "barangay_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nSuportahan ang LEWC sa pagmo-monitor\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, at Dynaslope Project\n",
+      "commmunity_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "plgu_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "trigger": "rainfall",
+      "alert_level": 0,
+      "id": 13,
+      "trigger_description": "May ambon o walang ulan na maaaring magdulot ng landslide"
+    },
+    {
+      "lewc_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nMag-obserba sa paligid, magsukat, at magpadala ng sukat sa MDRRMO tuwing Routine Monitoring\n",
+      "barangay_response": "Magpatuloy sa pang-araw-araw na gawain.\n\nSuportahan ang LEWC sa pagmo-monitor\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, at Dynaslope Project\n",
+      "commmunity_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "plgu_response": "Magpatuloy sa pang-araw-araw na gawain.",
+      "trigger": "earthquake",
+      "alert_level": 0,
+      "id": 14,
+      "trigger_description": "wMay mahinang lindol o walang lindol na maaaring magdulot ng landslide"
+    },
+    {
+      "lewc_response": "Magsukat ng surficial markers at mag-obserba sa paligid bago mag-7:30 AM, 11:30 AM, at 3:30 PM, at iradyo ang datos sa MDRRMO.\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk.\n",
+      "barangay_response": "Suportahan ang LEWC sa pagmo-monitor\n\nAntabayanan ang EWI mula sa MDRRMO para sa angkop na pagpapaabot ng EWI sa households at risk.\n",
+      "mlgu_response": "Magpatuloy sa pag-monitor ng datos mula sa LEWC at sa monitoring instruments.\n\nMagpatuloy sa pagpapaabot ng EWI sa LEWC, BLGU, PLGU, at Dynaslope Project\n",
+      "commmunity_response": "Maghandang rumesponde kung tumaas ang alert sa Alert 2 at Alert 3.\n\nKung dahil sa ulan, talian ang mga bubong o lagyan ng pabigat kung kinakailangan.\n\nKung dahil sa lindol, maghanda para sa mga posibleng aftershocks.\n\nMag-obserba sa paligid kung may pagbabago sa landslide features. I-report ang mga ito sa LEWC at BLGU.\n\nMakibalita sa radyo, TV, sound system, at sa BLGU at LEWC.\n",
+      "plgu_response": "Maghanda kung sakaling manghingi ng tulong ang MDRRMO.",
+      "trigger": "on_demand",
+      "alert_level": 1,
+      "id": 15,
+      "trigger_description": "May request ang local stakeholders dahil sa delikadong sitwasyon"
+    }
+  ]
+}
