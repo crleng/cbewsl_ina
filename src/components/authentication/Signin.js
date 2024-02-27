@@ -17,10 +17,10 @@ import { getNumberOfFiles } from "../../apis/Misc";
 
 import phivolcs_seal from "../../assets/phivolcs_seal.png";
 import dynaslope_seal from "../../assets/dynaslope_seal.png";
-import province_seal from "../../assets/benguet_province_seal.png";
-import municipality_seal from "../../assets/bakun_municipal_seal.png";
-import barangay_seal from "../../assets/bakun_barangay_seal.png";
-import lewc_seal from "../../assets/bak_lewc_seal.png";
+import province_seal from "../../assets/pdrrmo_seal.png";
+import municipality_seal from "../../assets/mdrrmo_seal.png";
+import barangay_seal from "../../assets/brgy_seal.png";
+import lewc_seal from "../../assets/lewc_seal_bare.png";
 
 import { CBEWSL_SITE_NAME } from "../../host";
 

@@ -14,12 +14,6 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
-import DostSeal from "../../assets/phivolcs_seal.png";
-import DynaslopeSealMini from "../../assets/dynaslope_seal_mini.png";
-import benguet_provincial_seal from "../../assets/benguet_province_seal.png";
-import bakun_municipal_seal from "../../assets/bakun_municipal_seal.png";
-import bakun_brgy_seal from "../../assets/bakun_barangay_seal.png";
-import bakun_lewc_seal from "../../assets/bak_lewc_seal.png";
 import HazardMap from "../../assets/hazard_map.jpg";
 import male_icon from "../../assets/male_icon.png";
 import female_icon from "../../assets/female_icon.png";
