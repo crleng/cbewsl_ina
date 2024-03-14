@@ -11,8 +11,12 @@ import {
   FormControl,
   Box,
   FormHelperText,
+  InputAdornment,
+  IconButton,
 } from "@mui/material";
 
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -48,6 +52,9 @@ function UserProfileModal(props) {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordMatched, setPasswordMatched] = useState();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   useEffect(() => {
     checkMatch();
@@ -311,12 +318,26 @@ function UserProfileModal(props) {
           <TextField
             id="outlined-required"
             placeholder="XXXX"
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             label="Password (required)"
             variant="outlined"
             style={{ width: "100%", paddingBottom: 10 }}
             onChange={(e) => {
               setNewPassword(e.target.value);
+            }}
+            InputProps={{
+              endAdornment:(
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={() => {setShowPassword(!showPassword)}} 
+                  onMouseDown={() => { }}
+                  edge="end"
+                >
+                {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                </IconButton>
+              </InputAdornment>
+              ),
             }}
           />
 
@@ -325,12 +346,26 @@ function UserProfileModal(props) {
             helperText={passwordMatched ? "" : "Password does not match"}
             id="outlined-required"
             placeholder="XXXX"
-            type="password"
+            type={showConfirmPassword ? 'text' : 'password'}
             label="Confirm Password (required)"
             variant="outlined"
             style={{ width: "100%", paddingBottom: 10 }}
             onChange={(e) => {
               setConfirmPassword(e.target.value);
+            }}
+            InputProps={{
+              endAdornment:(
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={() => {setShowConfirmPassword(!showConfirmPassword)}} 
+                  onMouseDown={() => { }}
+                  edge="end"
+                >
+                {showConfirmPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                </IconButton>
+              </InputAdornment>
+              ),
             }}
           />
 

@@ -108,9 +108,9 @@ function TempMomsTable(props) {
           component={Paper}
           style={{
             width: "auto",
-            marginLeft: 48,
-            marginRight: 48,
-            marginBottom: 48,
+            marginLeft: 70,
+            marginRight: 70,
+            marginBottom: 70,
           }}
         >
           <Table aria-label="simple table">
@@ -185,6 +185,7 @@ function HeaderAlertInformation(props) {
     munisipyo_response: "",
   });
   const [validity, setValidity] = useState(null);
+  const [server_time, setServerTime] = useState("");
 
   useEffect(() => {
     if (onGoingData.length > 0) {
@@ -242,6 +243,13 @@ function HeaderAlertInformation(props) {
     }
   }, [onGoingData]);
 
+  useEffect(() => {
+    setInterval(() => {
+      let dt = moment().format("MMMM D, YYYY h:mm A");
+      setServerTime(dt);
+    }, 1000);
+  }, []);
+
   return (
     <Grid
       container
@@ -249,76 +257,66 @@ function HeaderAlertInformation(props) {
       alignItems={"center"}
       textAlign={"center"}
     >
-      <Grid item xs={12} style={{ width: "100%", margin: 50 }}>
-        <Card
-          style={{
-            padding: 10,
-            backgroundColor: alert_level_colors.find(
-              (e) => e.alert_level === alert_level
-            ).color,
-            borderTopLeftRadius: 0,
-            borderTopRightRadius: 60,
-          }}
-        >
-          <Grid container spacing={1}>
-            <Grid item xs={3} style={{ alignSelf: "center" }}>
-              <Typography variant="h3">ALERT LEVEL {alert_level}</Typography>
-              <Typography variant="h5">
-                {moment(data_timestamp).format("MMMM D, YYYY, h:mm A")}
-              </Typography>
-            </Grid>
-            <Grid
-              item
-              xs={9}
+      <Grid item xs={12} style={{ width: "100%", margin: 10 }}>
+        <Grid container spacing={1}>
+          <Grid
+            item
+            xs={12}
+            style={{
+              alignSelf: "center",
+              marginTop: 8,
+              justifyItems: "center",
+            }}
+          >
+            <Typography variant="h4">Current alert status</Typography>
+            <Typography variant="h5">{server_time}</Typography>
+            <Divider variant="middle" style={{ padding: 10 }} />
+            <div
               style={{
-                alignSelf: "center",
-                borderLeft: "solid 2px rgba(0, 0, 0, 0.5)",
-                marginTop: 8,
-                padding: 30,
+                display: "flex",
+                justifyContent: "center",
+                paddingTop: 20,
               }}
             >
-              <Typography variant="h6" gutterBottom>
-                <strong>
-                  Alert {alert_level} (&nbsp;
-                  {latest_triggers.length > 0 &&
-                    latest_triggers.map((row, index) => {
-                      if (row) {
-                        const { trigger_description } = row;
-                        return `${trigger_description} `;
-                      }
-                      return "";
-                    })}
-                  )<br />
-                  {validity && validity}
-                </strong>
-              </Typography>
-              <br />
-              <Typography variant="body1" gutterBottom>
-                <strong>Responde (Komunidad):</strong>{" "}
-                {responses.community_response
-                  ? responses.community_response
-                  : "N/A"}
-              </Typography>
-              <br />
-              <Typography variant="body1" gutterBottom>
-                <strong>Responde (LEWC):</strong>{" "}
-                {responses.lewc_response ? responses.lewc_response : "N/A"}
-              </Typography>
-              <br />
-              <Typography variant="body1" gutterBottom>
-                <strong>Responde (Barangay):</strong>{" "}
-                {responses.barangay_response
-                  ? responses.barangay_response
-                  : "N/A"}
-              </Typography>
-              <br />
-              <Typography variant="body1" gutterBottom>
-                <strong>Responde (Munisipyo):</strong>{" "}
+              <Card
+                style={{
+                  backgroundColor: alert_level_colors.find(
+                    (e) => e.alert_level === alert_level
+                  ).color,
+                  width: 500,
+                }}
+              >
+                <Typography variant="h3">ALERT LEVEL {alert_level}</Typography>
+              </Card>
+            </div>
+            <Typography variant="h5">
+              {validity ? `valid until ${validity}` : ""}
+            </Typography>
+            <Grid container marginLeft={5} marginTop={2} align={"left"}>
+              <Grid style={{ width: "95%" }}>
+              <Typography fontSize={20}>
+                <b>Response (MDRRMO):{" "}</b>
                 {responses.mlgu_response ? responses.mlgu_response : "N/A"}
-              </Typography>
+                <br />
+                
+                <b>Response (Barangay):{" "}</b>
+                {responses.barangay_response ? responses.barangay_response : "N/A"}
+                <br />
+
+                <b>Response (LEWC):{" "}</b>
+                {responses.lewc_response ? responses.lewc_response : "N/A"}
+                <br />
+                  
+                <b>Response (Komunidad):{" "}</b>
+                {responses.community_response ? responses.community_response : "N/A"}
+                <br />
+                </Typography>
+              </Grid>
             </Grid>
+
+            <Divider variant="middle" style={{ paddingBottom: 10 }} />
           </Grid>
-        </Card>
+        </Grid>
       </Grid>
     </Grid>
   );
@@ -1088,23 +1086,7 @@ function OpCen2(props) {
         ewiTemplates={cbewsl_ewi_template}
       />
 
-      {moms_data && moms_data.length > 0 && (
-        <Grid
-          item
-          xs={12}
-          style={{ width: "95%", marginLeft: 38, padding: 10 }}
-        >
-          <Typography variant="h4">Landslide Features Validation</Typography>
-        </Grid>
-      )}
-
-      {moms_data && moms_data.length > 0 && (
-        <TempMomsTable
-          momsData={moms_data}
-          setSelectedMomsData={setSelectedMomsData}
-          setIsOpenUpdateMomsModal={setIsOpenUpdateMomsModal}
-        />
-      )}
+      
       <Grid
         item
         xs={12}
@@ -1129,7 +1111,7 @@ function OpCen2(props) {
                 style={{
                   marginLeft: 5,
                   float: "right",
-                  backgroundColor: "#ffd400",
+                  backgroundColor: "#FFC300",
                   color: "black",
                 }}
               >
@@ -1156,15 +1138,35 @@ function OpCen2(props) {
         })
       ) : (
         <div>
-          <Typography variant="body1" style={{ textAlign: "center" }}>
+          <Typography variant="body1" style={{ textAlign: "center",
+          marginBottom: 50 }}>
             No pending alerts
           </Typography>
         </div>
       )}
+
+      {moms_data && moms_data.length > 0 && (
+        <Grid
+          item
+          xs={12}
+          style={{ width: "95%", marginLeft: 38, padding: 10 }}
+        >
+          <Typography variant="h4">Landslide Features Validation</Typography>
+        </Grid>
+      )}
+
+      {moms_data && moms_data.length > 0 && (
+        <TempMomsTable
+          momsData={moms_data}
+          setSelectedMomsData={setSelectedMomsData}
+          setIsOpenUpdateMomsModal={setIsOpenUpdateMomsModal}
+        />
+      )}
+      
       <Grid
         item
         xs={12}
-        style={{ width: "95%", marginLeft: 38, padding: 10, marginTop: 30 }}
+        style={{ width: "95%", marginLeft: 38, padding: 10, marginTop: 5 }}
       >
         <Typography variant="h4">Event Monitoring</Typography>
       </Grid>
