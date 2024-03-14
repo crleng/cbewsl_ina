@@ -8,7 +8,17 @@ import {
   Typography,
   TextField,
   Grid,
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  InputAdornment,
+  IconButton,
 } from "@mui/material";
+import DemoPaper from '@mui/material/Paper';
+
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { Link } from "@material-ui/core";
 import UserProfileModal from "../interfaces/modals/UserProfileModal";
 import PromptModal from "../interfaces/modals/PromptModal";
@@ -17,10 +27,11 @@ import { getNumberOfFiles } from "../../apis/Misc";
 
 import phivolcs_seal from "../../assets/phivolcs_seal.png";
 import dynaslope_seal from "../../assets/dynaslope_seal.png";
-import province_seal from "../../assets/pdrrmo_seal.png";
-import municipality_seal from "../../assets/mdrrmo_seal.png";
+import province_seal from "../../assets/Iloilo_logo.png";
+import municipality_seal from "../../assets/Maasin_logo.png";
 import barangay_seal from "../../assets/brgy_seal.png";
-import lewc_seal from "../../assets/lewc_seal_bare.png";
+import lewc_seal from "../../assets/lewc_logo.png";
+import ina_view from "../../assets/ina_view.png";
 
 import { CBEWSL_SITE_NAME } from "../../host";
 
@@ -43,6 +54,8 @@ const Signin = () => {
 
   const [indicator, setIndicator] = useState("");
   const [otp, setOTP] = useState("");
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const [fileCount, setFileCount] = useState();
 
@@ -260,12 +273,24 @@ const Signin = () => {
       />
 
       <Fragment>
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        style={{
+          minHeight: "100vh",
+          backgroundImage: `url(${ina_view})`,
+          backgroundSize: "cover",
+        }}
+      >
+      <Card sx={{ maxWidth: 1200, maxHeight: 900, backgroundColor: 'rgba(255, 255, 255, 0.78)', border: '2px solid #156c33' }}>
+        <CardContent>
         <Grid container>
           <Grid
             item
             xs={12}
             sm={12}
-            style={{ paddingTop: "8%", marginBottom: "3%" }}
+            style={{ paddingTop: "2%", marginBottom: "2%" }}
           >
             <div
               style={{
@@ -279,8 +304,8 @@ const Signin = () => {
                 alt="phivolcs-seal-png"
                 style={{
                   objectFit: "contain",
-                  height: 140,
-                  width: 190,
+                  height: 120,
+                  width: 150,
                   marginRight: 20,
                 }}
               />
@@ -289,8 +314,8 @@ const Signin = () => {
                 alt="dynaslope-seal-png"
                 style={{
                   objectFit: "contain",
-                  height: 140,
-                  width: 140,
+                  height: 120,
+                  width: 120,
                   marginRight: 20,
                 }}
               />
@@ -299,8 +324,8 @@ const Signin = () => {
                 alt="province-seal-png"
                 style={{
                   objectFit: "contain",
-                  height: 155,
-                  width: 155,
+                  height: 125,
+                  width: 125,
                   marginRight: 20,
                 }}
               />
@@ -309,8 +334,8 @@ const Signin = () => {
                 alt="municipality-seal-png"
                 style={{
                   objectFit: "contain",
-                  height: 150,
-                  width: 150,
+                  height: 128,
+                  width: 128,
                   marginRight: 20,
                 }}
               />
@@ -319,8 +344,8 @@ const Signin = () => {
                 alt="barangay-seal-png"
                 style={{
                   objectFit: "contain",
-                  height: 155,
-                  width: 155,
+                  height: 125,
+                  width: 125,
                   marginRight: 20,
                 }}
               />
@@ -329,8 +354,8 @@ const Signin = () => {
                 alt="lewc-seal-png"
                 style={{
                   objectFit: "contain",
-                  height: 150,
-                  width: 150,
+                  height: 125,
+                  width: 125,
                   marginRight: 20,
                 }}
               />
@@ -346,20 +371,39 @@ const Signin = () => {
             alignContents="center"
           >
             <Typography
-              variant="h2"
+              fontSize={55}
+              // variant="h3"
               align="center"
               color="grey.700"
               fontWeight="fontWeightBold"
               sx={{
-                backgroundColor: "#f89422",
+                backgroundColor: "#156c33",
                 backgroundSize: "100%",
                 backgroundRepeat: "repeat",
                 backgroundClip: "text",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-              }}
+                  }}
             >
-              Community Based Early Warning System for Landslides
+              Community-based Early Warning System
+            </Typography>
+
+            <Typography
+              fontSize={55}
+              // variant="h3"
+              align="center"
+              color="grey.700"
+              fontWeight="fontWeightBold"
+              sx={{
+                backgroundColor: "#156c33",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                  }}
+            >
+              for Landslides
             </Typography>
 
             <Typography
@@ -368,7 +412,7 @@ const Signin = () => {
               color="grey.700"
               fontWeight="fontWeightBold"
               sx={{
-                backgroundColor: "#16526D",
+                backgroundColor: "black",
                 backgroundSize: "100%",
                 backgroundRepeat: "repeat",
                 backgroundClip: "text",
@@ -377,10 +421,11 @@ const Signin = () => {
                 marginBottom: 5,
               }}
             >
-              Brgy. Poblacion, Bakun, Benguet
+              Brgy. Inabasan, Maasin, Iloilo
             </Typography>
-
+        
             <Grid container spacing={4} textAlign="center">
+           
               <Grid item xs={12} sm={12} md={12}>
                 <TextField
                   id="filled-helperText"
@@ -412,7 +457,7 @@ const Signin = () => {
                   id="filled-helperText"
                   placeholder="**************"
                   inputProps={{ min: 0, style: { textAlign: "center" } }}
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   helperText={
                     <Typography
                       variant="caption"
@@ -426,6 +471,26 @@ const Signin = () => {
                   style={{ width: "25%" }}
                   onChange={(e) => {
                     setPassword(e.target.value);
+                  }}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={() => {
+                            setShowPassword(!showPassword);
+                          }}
+                          onMouseDown={() => {}}
+                          edge="end"
+                        >
+                          {showPassword ? (
+                            <VisibilityOffIcon />
+                          ) : (
+                            <VisibilityIcon />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
                   }}
                   onKeyPress={(event) => {
                     if (event.code === "Enter") {
@@ -443,15 +508,20 @@ const Signin = () => {
                     onClick={() => {
                       handleLogin();
                     }}
-                    style={{ backgroundColor: "#FFC000", color: "black" }}
+                    style={{ backgroundColor: "#156c33", color: "white" }}
                   >
                     Sign in
                   </Button>
                 </Grid>
+                <Grid item xs={12} sm={12} md={12} style={{ marginTop: 50 }}>
                 <Grid>
                   <Link
                     component="button"
-                    style={{ fontStyle: "italic", fontSize: 16 }}
+                    style={{
+                      fontStyle: "italic",
+                      fontSize: 16,
+                      color: "black",
+                    }}
                     onClick={(e) => {
                       setOpenModal(true);
                     }}
@@ -459,23 +529,31 @@ const Signin = () => {
                     Forgot Password?
                   </Link>
                 </Grid>
-              </Grid>
-              <Grid item xs={12} sm={12} md={12}>
-                <Button
-                  variant="contained"
-                  onClick={(e) => {
-                    setCreateAccountModal(true);
-                  }}
-                  style={{ backgroundColor: "green", color: "white" }}
-                >
-                  No account yet? Register here!
-                </Button>
+                <Grid>
+                  <Link
+                    component="button"
+                    style={{
+                      fontStyle: "italic",
+                      fontSize: 16,
+                      color: "black",
+                    }}
+                    onClick={(e) => {
+                      setCreateAccountModal(true);
+                    }}
+                  >
+                    No account yet? Register here!
+                  </Link>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Fragment>
-    </Fragment>
+      </Grid>
+    </CardContent>
+    </Card>
+  </Grid>
+  </Fragment>
+  </Fragment>
   );
 };
 

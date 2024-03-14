@@ -151,8 +151,9 @@ const MainHeader = () => {
     if (path_name === `/${CBEWSL_SITE_NAME}/opcen`) {
       setValue(0);
     } else if (
-      // path_name === '/hazard_mapping' ||
-      path_name === `/${CBEWSL_SITE_NAME}/cav`
+      path_name === `/${CBEWSL_SITE_NAME}/surficial_markers` ||
+      path_name === `/${CBEWSL_SITE_NAME}/moms`
+      
     ) {
       setValue(1);
     } else if (
@@ -164,8 +165,8 @@ const MainHeader = () => {
     ) {
       setValue(2);
     } else if (
-      path_name === `/${CBEWSL_SITE_NAME}/surficial_markers` ||
-      path_name === `/${CBEWSL_SITE_NAME}/moms`
+      // path_name === '/hazard_mapping' ||
+      path_name === `/${CBEWSL_SITE_NAME}/cav`
     ) {
       setValue(3);
     } else if (path_name === `/${CBEWSL_SITE_NAME}/events`) {
@@ -215,7 +216,7 @@ const MainHeader = () => {
           >
             <Typography
               variant="h5"
-              style={{ fontWeight: "600", color: "green" }}
+              style={{ fontWeight: "600", color: "#156c33" }}
             >
               COMMUNITY-BASED EARLY WARNING SYSTEM FOR LANDSLIDES
             </Typography>
@@ -223,7 +224,7 @@ const MainHeader = () => {
               variant="h6"
               style={{ fontWeight: "300", color: "black" }}
             >
-              Brgy. Poblacion, Bakun, Benguet
+              Brgy. Inabasan, Maasin, Iloilo
             </Typography>
           </div>
         </Grid>
@@ -377,20 +378,20 @@ const MainHeader = () => {
           }}
         >
           <AppBar position="static" color="inherit">
-            <Grid container style={{ backgroundColor: "green" }}>
+            <Grid container style={{ backgroundColor: "#FFC300" }}>
               <Grid item md={10}>
                 <Toolbar style={{ justifyContent: "center" }}>
                   <Tabs
                     value={value}
                     onChange={handleChange}
                     TabIndicatorProps={{
-                      style: { background: "white" },
+                      style: { background: "black" },
                     }}
                     aria-label="basic tabs example"
                   >
                     <Tab
                       label={
-                        <span style={{ color: "white", fontWeight: "bold" }}>
+                        <span style={{ color: "black", fontWeight: "bold" }}>
                           DASHBOARD
                         </span>
                       }
@@ -398,18 +399,18 @@ const MainHeader = () => {
                     />
                     <Tab
                       label={
-                        <span style={{ color: "white", fontWeight: "bold" }}>
-                          COMMUNITY RISK ASSESSMENT
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          GROUND DATA
                         </span>
                       }
                       onClick={(e) => {
-                        handleClickCRA(e);
+                        handleClickGroundData(e);                        
                         preventDefault(e);
                       }}
                     />
                     <Tab
                       label={
-                        <span style={{ color: "white", fontWeight: "bold" }}>
+                        <span style={{ color: "black", fontWeight: "bold" }}>
                           DATA ANALYSIS
                         </span>
                       }
@@ -420,18 +421,18 @@ const MainHeader = () => {
                     />
                     <Tab
                       label={
-                        <span style={{ color: "white", fontWeight: "bold" }}>
-                          GROUND DATA
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          COMMUNITY RISK ASSESSMENT
                         </span>
                       }
                       onClick={(e) => {
-                        handleClickGroundData(e);
+                        handleClickCRA(e);
                         preventDefault(e);
                       }}
                     />
                     <Tab
                       label={
-                        <span style={{ color: "white", fontWeight: "bold" }}>
+                        <span style={{ color: "black", fontWeight: "bold" }}>
                           SCHEDULE
                         </span>
                       }
@@ -442,7 +443,7 @@ const MainHeader = () => {
                 </Toolbar>
               </Grid>
               <Grid item md={2} style={{ alignSelf: "center" }}>
-                <Typography variant="body1" style={{ color: "white" }}>
+                <Typography variant="body1" style={{ color: "black" }}>
                   {server_time.toUpperCase()}
                 </Typography>
               </Grid>

@@ -4,10 +4,10 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 
 import phivolcs_seal from "../../assets/phivolcs_seal.png";
 import dynaslope_seal from "../../assets/dynaslope_seal.png";
-import provincial_seal from "../../assets/pdrrmo_seal.png";
-import municipal_seal from "../../assets/mdrrmo_seal.png";
+import provincial_seal from "../../assets/Iloilo_logo.png"
+import municipal_seal from "../../assets/Maasin_logo.png"
 import brgy_seal from "../../assets/brgy_seal.png";
-import lewc_seal from "../../assets/lewc_seal_bare.png";
+import lewc_seal from "../../assets/lewc_logo.png";
 
 const useStyles = makeStyles((theme) => ({
   md_image: {
@@ -22,6 +22,14 @@ const useStyles = makeStyles((theme) => ({
     length: "70px",
     width: "75px",
     marginLeft: "12px",
+    [theme.breakpoints.down("sm")]: {
+      length: "50px",
+      width: "50px",
+    },
+  },
+  s_image: {
+    length: "70px",
+    width: "75px",
     [theme.breakpoints.down("sm")]: {
       length: "50px",
       width: "50px",
@@ -66,28 +74,28 @@ function SignInLogo(props) {
           <img
             className={classes.md_image}
             src={provincial_seal}
-            alt="bak_province_seal"
+            alt="ina_province_seal"
           />
         </Grid>
         <Grid item xs={2}>
           <img
             className={classes.md_image}
             src={municipal_seal}
-            alt="bak_municipality_seal"
+            alt="ina_municipality_seal"
           />
         </Grid>
         <Grid item xs={2}>
           <img
             className={classes.md_image}
             src={brgy_seal}
-            alt="bak_brgy_seal"
+            alt="ina_brgy_seal"
           />
         </Grid>
         <Grid item xs={2}>
           <img
-            className={classes.md_image}
+            className={classes.s_image}
             src={lewc_seal}
-            alt="bak_lewc_seal"
+            alt="ina_lewc_seal"
           />
         </Grid>
       </Grid>
