@@ -67,6 +67,7 @@ import {
   downloadMarkerHistoryTags,
 } from "../../apis/analysis";
 import { CBEWSL_SITE_LOCATION } from "../../host";
+import DateRangeSelector from "./DateRangeSelector";
 
 // init the module
 HC_exporting(Highcharts);
@@ -1815,6 +1816,14 @@ function SurficialGraph(props) {
   return (
     <Fragment>
       <div style={{ marginTop: 16 }}>
+      <Grid container spacing={1} justifyContent="flex-end">
+          <div style={{ marginBottom: 16 }}>
+            <DateRangeSelector
+              selectedRangeInfo={selected_range_info}
+              setSelectedRangeInfo={setSelectedRangeInfo}
+            />
+          </div>
+        </Grid>
         <Grid
           container
           spacing={2}
