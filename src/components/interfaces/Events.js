@@ -64,7 +64,6 @@ const Events = (props) => {
     { name: "note", label: "Activity details" },
     { name: "start", label: "Start date" },
     { name: "end", label: "End date" },
-    // {name: 'actions', label: 'Actions'},
   ];
 
   const options = {

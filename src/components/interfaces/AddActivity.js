@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import DoNotDisturbIcon from "@mui/icons-material/DoNotDisturb";
 import Dialog from "@mui/material/Dialog";
+import FormHelperText from "@mui/material/FormHelperText";
 
 import AddCircleOutlined from '@mui/icons-material/AddCircleOutlined';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -53,6 +54,7 @@ const AddActivity = (props) => {
   const [promptTitle, setPromptTitle] = useState("");
   const [notifMessage, setNotifMessage] = useState("");
   const [errorPrompt, setErrorPrompt] = useState(false);
+  const [incomplete, setIncomplete] = useState(false);
 
   useEffect(() => {
     if (action == "add") {
@@ -98,7 +100,22 @@ const AddActivity = (props) => {
   };
 
   const handleSubmit = () => {
-    setIsConfirm(!isConfirm);
+    if (eventName !== "" ) {
+      let promptMsg = `Start Date and Time: ${moment(eventStartDate).format("LL h:mm A")}\n`;
+      promptMsg += `End Date and Time: ${moment(eventEndDate).format("LL h:mm A")}\n`;
+      promptMsg += `Activity Name: ${eventName}\n`;
+      promptMsg += `Activity Place: ${eventPlace}\n`;
+      promptMsg += `Activity Description: ${eventNote}\n`;
+
+      setIsConfirm(!isConfirm);
+      // setOpen(false);
+      setOpenPrompt(true);
+      setErrorPrompt(false);
+      setPromptTitle("Please confirm activity inputs: ");
+      setNotifMessage(promptMsg);
+    } else {
+      setIncomplete(true);
+    }    
   };
 
   const handleActivity = () => {
@@ -145,6 +162,13 @@ const AddActivity = (props) => {
         title={promptTitle}
         setOpenModal={setOpenPrompt}
         notifMessage={notifMessage}
+        confirmation={isConfirm}
+        callback={(response) => {
+          if (response) {
+            handleActivity();
+          }
+          handleClose()
+        }}
       />
 
       <Dialog
@@ -215,14 +239,16 @@ const AddActivity = (props) => {
                   id="outlined-required"
                   placeholder="Ex: CBEWS-L Seminar"
                   label="Name of Activity"
+                  error={incomplete}
                   variant="outlined"
                   value={eventName}
-                  // style={{width: '100%', paddingBottom: 10}}
                   onChange={(e) => {
                     e.preventDefault();
                     setEventName(e.target.value);
                   }}
                 />
+                <FormHelperText style={{ paddingLeft: 15, fontSize: "12px", color: incomplete ? 'red' : '' }}>Required</FormHelperText>
+
                 <TextField
                   id="outlined-required"
                   placeholder="Ex: Brgy. Hall"
@@ -288,44 +314,6 @@ const AddActivity = (props) => {
           </div>
         ) : (
           <div style={{ overflowWrap: "anywhere", width: 500 }}>
-            <DialogContent>
-              <h1>Are you sure?</h1>
-              <Divider />
-              <h3>Start Date and Time: </h3>
-              {`${moment(eventStartDate).format("LL h:mm A")}`}
-              <h3>End Date and Time: </h3>
-              {`${moment(eventEndDate).format("LL h:mm A")}`}
-              <h3>Activity Name: </h3>
-              {eventName}
-              <h3>Activity Place: </h3>
-              {eventPlace}
-              <h3>Activity Description:</h3>
-              <Typography variant="body1" gutterBottom>
-                {eventNote}
-              </Typography>
-              <Divider />
-              <Stack
-                direction="row"
-                spacing={2}
-                justifyContent="flex-end"
-                paddingTop={2}
-              >
-                <Button
-                  onClick={() => {
-                    handleActivity();
-                  }}
-                >
-                  Yes
-                </Button>
-                <Button
-                  onClick={() => {
-                    handleSubmit();
-                  }}
-                >
-                  No
-                </Button>
-              </Stack>
-            </DialogContent>
           </div>
         )}
       </Dialog>
