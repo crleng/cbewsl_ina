@@ -16,7 +16,7 @@ const Rainfall = () => {
             <Grid item xs={12} sx={{ padding: 8 }}>
                 <Grid item xs={12} sm={12} md={12} lg={12}>
                     <Box>
-                        <Typography variant='h5' sx={{marginBottom: 4}}>
+                        <Typography variant='h4' sx={{marginBottom: 4}}>
                             Rainfall Data
                         </Typography>
                     </Box>

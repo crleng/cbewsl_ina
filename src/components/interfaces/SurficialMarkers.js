@@ -8,6 +8,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  IconButton,
 } from "@mui/material";
 import FabMuiTable from "../utils/MuiTable";
 import TextField from "@mui/material/TextField";
@@ -19,11 +20,14 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
+import { MobileTimePicker } from "@mui/x-date-pickers/MobileTimePicker";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import moment from "moment";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import {
   sendMeasurement,
   deletePrevMeasurement,
+  deleteMeasurement,
   getStaffs,
   getTableSurficial,
 } from "../../apis/SurficialMeasurements";
@@ -54,11 +58,12 @@ const SurficialMarkers = (props) => {
   const [staffs, setStaffs] = useState([]);
 
   const [markersTable, setMarkersTable] = useState([]);
-  const [tableColumns, setTableColumns] = useState([
-    { accessorKey: "date", header: "Date" },
-    { accessorKey: "time", header: "Time" },
-    { accessorKey: "measurer", header: "Measurer" },
-  ]);
+  // const [tableColumns, setTableColumns] = useState([
+  //   { accessorKey: "date", header: "Date" },
+  //   { accessorKey: "time", header: "Time" },
+  //   { accessorKey: "measurer", header: "Measurer" },
+  // ]);
+  const [tableColumns, setTableColumns] = useState([]);
   const [markers, setMarkers] = useState([]);
 
   const [openPrompt, setOpenPrompt] = useState(false);
@@ -123,6 +128,16 @@ const SurficialMarkers = (props) => {
 
         tempColumns.push({ name: "weather", label: "Weather" });
         tempColumns.push({ name: "measurer", label: "Measurer" });
+        tempColumns.push({
+          name: "timeActual",
+          label: "timeActual",
+          options: { display: false, download: false },
+        });
+        tempColumns.push({
+          name: "mo_id",
+          label: "mo_id",
+          options: { display: false, download: false },
+        });
 
         setMarkers(response.data.markers);
         setTableColumns(tempColumns);
@@ -134,6 +149,7 @@ const SurficialMarkers = (props) => {
             ...marker,
             date: moment(marker.date).format("LL"),
             time: moment(new Date(marker.time)).format("LT"),
+            timeActual: marker.time,
           });
         });
         setMarkersTable(tempMarkers);
@@ -195,7 +211,7 @@ const SurficialMarkers = (props) => {
     return /^[a-zA-Z ]*$/.test(str);
   };
 
-  const submitMeasurements = () => {
+  const saveMeasurements = () => {
     let tempMarkers = {};
     let reporterStr = measurement.reporter.join(" ");
     if (measurement.reporterOther != undefined) {
@@ -217,49 +233,43 @@ const SurficialMarkers = (props) => {
       type: "EVENT",
       site_code: CBEWSL_SITE_CODE.toLocaleUpperCase(),
     };
-
-    if (isUpdate) {
-      deletePrevMeasurement(selectedMoId, (response) => {
-        sendMeasurement(submitData, (response) => {
-          if (response.status == true) {
-            setOpen(false);
-
-            Swal.fire({
-              icon: "success",
-              title: "Success!",
-              text: "Successfully saved ground measurements",
-            });
-            fetchAll();
-          } else {
-            Swal.fire({
-              icon: "error",
-              title: "Error!",
-              text: "Error saving ground measurements. Please contact developers",
-            });
-          }
+    sendMeasurement(submitData, (response) => {
+      if (response.status) {
+        setOpen(false);
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Kindly wait for atleast 2 minutes for the system to successfully register the data.",
         });
-      });
-    } else {
-      sendMeasurement(submitData, (response) => {
-        if (response.status == true) {
-          setOpen(false);
-          Swal.fire({
-            icon: "success",
-            title: "Success!",
-            text: "Successfully saved ground measurements",
-          });
-          fetchAll();
-          initialize();
+        fetchAll();
+        initialize();
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: "Error sending ground measurements. Please contact developers",
+        });
+      }
+    });
+  };
+
+  const submitMeasurements = () => {
+    if (isUpdate) {
+      deleteMeasurement(measurement.mo_id, (response) => {
+        console.log("responseeeee", response);
+        if (response.status) {
+          console.log("is it here??");
+          saveMeasurements();
         } else {
-          initialize();
-          setOpen(false);
           Swal.fire({
             icon: "error",
             title: "Error!",
-            text: "Error sending ground measurements. Please contact developers",
+            text: "Error saving ground measurements. Please contact developers",
           });
         }
       });
+    } else {
+      saveMeasurements();
     }
   };
 
@@ -267,7 +277,7 @@ const SurficialMarkers = (props) => {
     let valid = checkRequired() && reporterCheck();
 
     if (valid) {
-      let promptMsg = `Date ${moment(measurement.date).format("LL")}`;
+      let promptMsg = `Date ${moment(measurement.date).format("LL")}\n`;
       promptMsg += `Time ${moment(new Date(measurement.time)).format(
         "hh:mm A"
       )}\n`;
@@ -309,6 +319,29 @@ const SurficialMarkers = (props) => {
     initialize();
   };
 
+  const handleRowClick = (row, i) => {
+    let tempMeasurement = {};
+
+    tempMeasurement = {
+      date: row[0],
+      time: new Date(row[markers.length + 4]),
+
+      weather: row[markers.length + 2].toLowerCase(),
+      reporterOther: row[markers.length + 3],
+      mo_id: row[markers.length + 5],
+      reporter: [],
+    };
+
+    markers.map((marker, i) => {
+      tempMeasurement[marker] = row[i + 2];
+    });
+
+    setNewName(true);
+    setMeasurement(tempMeasurement);
+    setOpen(true);
+    setIsUpdate(true);
+  };
+
   const options = {
     print: false,
     filter: true,
@@ -324,7 +357,7 @@ const SurficialMarkers = (props) => {
     // const idsToDelete = rowsDeleted.data.map (item => item.dataIndex)
     // handleMuiTableBatchDelete(idsToDelete.sort());
     // },
-    // onRowClick: handleRowClick,
+    onRowClick: handleRowClick,
   };
 
   return (
@@ -347,6 +380,7 @@ const SurficialMarkers = (props) => {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        style={{ zIndex: 1059 }}
       >
         <DialogTitle id="alert-dialog-title">
           {isUpdate ? "Update " : "Enter new "}surficial marker measurements
@@ -402,7 +436,7 @@ const SurficialMarkers = (props) => {
                   />
                 )}
               />
-              <TimePicker
+              <MobileTimePicker
                 label="Time of measurement"
                 value={measurement.time}
                 onChange={(e) => {
@@ -412,7 +446,19 @@ const SurficialMarkers = (props) => {
                   });
                 }}
                 renderInput={(params) => (
-                  <TextField style={{ width: "49%" }} {...params} />
+                  <TextField
+                  style={{ width: "49%" }}
+                  {...params}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton edge="end">
+                          <AccessTimeIcon />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />  
                 )}
               />
             </Box>
@@ -492,11 +538,11 @@ const SurficialMarkers = (props) => {
                 });
               }}
             >
-              <MenuItem value={"Maaraw"}>Maaraw</MenuItem>
-              <MenuItem value={"Maulap"}>Maulap</MenuItem>
-              <MenuItem value={"Maulan"}>Maulan</MenuItem>
-              <MenuItem value={"Makulimlim"}>Makulimlim</MenuItem>
-              <MenuItem value={"Maambon"}>Maambon</MenuItem>
+              <MenuItem value={"maaraw"}>Maaraw</MenuItem>
+              <MenuItem value={"maulap"}>Maulap</MenuItem>
+              <MenuItem value={"maulan"}>Maulan</MenuItem>
+              <MenuItem value={"makulimlim"}>Makulimlim</MenuItem>
+              <MenuItem value={"maambon"}>Maambon</MenuItem>
             </Select>
             <FormHelperText>Required</FormHelperText>
           </FormControl>
@@ -615,7 +661,7 @@ const SurficialMarkers = (props) => {
                 variant="contained"
                 onClick={handleClickOpen}
                 style={{
-                  backgroundColor: "#ffd400",
+                  backgroundColor: "#FFC300",
                   color: "black",
                   float: "right",
                 }}

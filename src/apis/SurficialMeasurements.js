@@ -42,6 +42,18 @@ export const deletePrevMeasurement = (data, callback) => {
     .catch((error) => {});
 };
 
+export const deleteMeasurement = (data, callback) => {
+  axios
+    .post(`${API_URL}/api/surficial/delete_surficial_data`, {
+      quantity: "all",
+      id: data,
+    })
+    .then((response) => {
+      callback(response.data);
+    })
+    .catch((error) => {});
+};
+
 export const getStaffs = (callback) => {
   axios
     .get(`${API_URL}/api/misc/get_all_staff_users`)

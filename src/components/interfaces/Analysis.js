@@ -66,25 +66,25 @@ const Analysis = (props) => {
           </Button> */}
 
           <Box>
-            <Typography variant="h5" sx={{ marginBottom: 4 }}>
+            <Typography variant="h4" sx={{ marginBottom: 4 }}>
               Rainfall Data
             </Typography>
           </Box>
         </Grid>
         <RainfallGraph />
-        <Typography variant="h5" sx={{ marginBottom: 4, marginTop: 8 }}>
+        <Typography variant="h4" sx={{ marginBottom: 4, marginTop: 8 }}>
           Surficial Data
         </Typography>
         <SurficialGraph />
-        <Typography variant="h5" sx={{ marginBottom: 4, marginTop: 8 }}>
+        <Typography variant="h4" sx={{ marginBottom: 4, marginTop: 8 }}>
           Subsurface Data
         </Typography>
         <SubsurfaceGraph />
-        <Typography variant="h5" sx={{ marginBottom: 4, marginTop: 8 }}>
+        <Typography variant="h4" sx={{ marginBottom: 4, marginTop: 8 }}>
           Manifestations of Movement
         </Typography>
         <MomsTable instances={instances} />
-        <Typography variant="h5" sx={{ marginBottom: 4, marginTop: 8 }}>
+        <Typography variant="h4" sx={{ marginBottom: 4, marginTop: 8 }}>
           Earthquake Proximity Map
         </Typography>
         <EarthquakeChart />

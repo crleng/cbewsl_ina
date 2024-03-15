@@ -115,8 +115,8 @@ function EarthquakeMap(props) {
   const { eqEvents, zoomIn } = props;
   const sites = require("./../data/sites.json");
   const state = {
-    lat: 16.7907,
-    lng: 120.6616,
+    lat: 10.869910,
+    lng: 122.436200,
     zoom: 9,
   };
 
@@ -306,7 +306,7 @@ function EarthquakeChart(props) {
       },
     },
     selectableRows: "none",
-    count: eqAlertsPagination.count,
+    count: eq_al_tbl_pagination.count,
     rowsPerPage: 10,
     rowsPerPageOptions: [],
     print: false,
@@ -340,15 +340,15 @@ function EarthquakeChart(props) {
               onChange={change_tab_value}
               variant="fullWidth"
               TabIndicatorProps={{
-                style: { background: "#ffd400" },
+                style: { background: "black" },
               }}
             >
               <Tab
-                style={{ color: "white", backgroundColor: "green" }}
+                style={{ color: "black", backgroundColor: "#FFC300" }}
                 label="EQ Events"
               />
               <Tab
-                style={{ color: "white", backgroundColor: "green" }}
+                style={{ color: "black", backgroundColor: "#FFC300" }}
                 label="EQ Alerts"
               />
             </Tabs>

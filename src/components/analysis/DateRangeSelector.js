@@ -83,7 +83,7 @@ function DateRangeSelector(props) {
             style={{
               marginRight: 6,
               float: "right",
-              backgroundColor: "#ffd400",
+              backgroundColor: "#FFC300",
               color: "black",
             }}
             endIcon={<ArrowDropDown />}
@@ -130,7 +130,7 @@ function DateRangeSelector(props) {
           style={{
             marginRight: is_subsurface ? 8 : 0,
             float: "right",
-            backgroundColor: "#ffd400",
+            backgroundColor: "#FFC300",
             color: "black",
           }}
           endIcon={<ArrowDropDown />}
