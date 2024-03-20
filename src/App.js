@@ -22,6 +22,7 @@ import Feedback from "./components/interfaces/Feedback";
 import ChangePassword from "./components/utils/ChangePassword";
 import ProfileSettings from "./components/utils/ProfileSettings";
 import Bulletin from "./components/utils/Bulletin";
+import Resources from "./components/interfaces/Resources"
 import "./components/interfaces/css/sandbox.css";
 import "./components/interfaces/css/embla.css";
 
@@ -146,14 +147,17 @@ const App = (props) => {
                 path={`${CBEWSL_SITE_NAME}/moms`}
                 element={<Moms />}
               />
+              <Route exact path={`${CBEWSL_SITE_NAME}/resources`} element={<Resources />} />
             </Routes>
-          ) : (
+          
+             ) : (
             window.location.pathname != `/${CBEWSL_SITE_NAME}` &&
             window.location.pathname != `${CBEWSL_SITE_NAME}` &&
             window.location.pathname != `${CBEWSL_SITE_NAME}/signin` &&
             window.location.pathname != `${CBEWSL_SITE_NAME}/feedback` &&
             (window.location = `/${CBEWSL_SITE_NAME}`)
-          )}
+          )} 
+        
         </Router>
       </SnackbarProvider>
     </Fragment>
