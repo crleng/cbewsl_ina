@@ -233,7 +233,7 @@ const Events = (props) => {
                       <Container>
                         <CircleIcon
                           fontSize="large"
-                          sx={{ color: "#ffd400" }}
+                          sx={{ color: "#FFC300" }}
                         />
                       </Container>
                     </Grid>

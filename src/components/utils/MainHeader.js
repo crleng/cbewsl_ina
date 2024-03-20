@@ -349,6 +349,14 @@ const MainHeader = () => {
             >
               <MenuItem
                 onClick={() => {
+                  navigate(`${CBEWSL_SITE_NAME}/resources`);
+                  handleClose();
+                }}
+              >
+                Resources
+              </MenuItem>
+              <MenuItem
+                onClick={() => {
                   navigate(`${CBEWSL_SITE_NAME}/feedback`);
                   handleClose();
                 }}

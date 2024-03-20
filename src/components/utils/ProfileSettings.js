@@ -18,7 +18,7 @@ import {
   Tooltip,
 } from "@mui/material";
 
-import bak_view from "../../assets/bakun_view.png";
+import ina_view from "../../assets/ina_landscape.JPG";
 import male_icon from "../../assets/male_icon.png";
 import female_icon from "../../assets/female_icon.png";
 
@@ -194,12 +194,12 @@ const ProfileSettings = () => {
       />
 
       <Container maxWidth="md">
-        <Grid container style={{ paddingTop: "10%" }}>
+        <Grid container style={{ paddingTop: "10%", paddingBottom: "10%"}}>
           <Card sx={{ maxWidth: 800 }}>
             <CardMedia
               component="img"
               alt="lewc"
-              image={bak_view}
+              image={ina_view}
               height="300"
             />
             <CardContent>
@@ -331,7 +331,7 @@ const ProfileSettings = () => {
                 <Button
                   variant="contained"
                   onClick={handleUpdate}
-                  style={{ backgroundColor: "#ffd400", color: "black" }}
+                  style={{ backgroundColor: "#FFC300", color: "black", marginBottom: 20 }}
                 >
                   Save
                 </Button>

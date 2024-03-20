@@ -113,6 +113,7 @@ const SurficialMarkers = (props) => {
     };
 
     getTableSurficial(submitData, (response) => {
+      console.log("re", response)
       if (response.status) {
         let tempColumns = [
           { name: "date", label: "Date" },
@@ -233,6 +234,7 @@ const SurficialMarkers = (props) => {
       type: "EVENT",
       site_code: CBEWSL_SITE_CODE.toLocaleUpperCase(),
     };
+    console.log("sub", submitData)
     sendMeasurement(submitData, (response) => {
       if (response.status) {
         setOpen(false);
@@ -277,6 +279,7 @@ const SurficialMarkers = (props) => {
     let valid = checkRequired() && reporterCheck();
 
     if (valid) {
+      console.log("measurement", measurement)
       let promptMsg = `Date ${moment(measurement.date).format("LL")}\n`;
       promptMsg += `Time ${moment(new Date(measurement.time)).format(
         "hh:mm A"
