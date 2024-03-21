@@ -220,7 +220,8 @@ const SurficialMarkers = (props) => {
     }
 
     markers.map((marker) => {
-      tempMarkers[marker.toUpperCase()] = measurement[marker];
+      if (measurement[marker] > 0)
+        tempMarkers[marker.toUpperCase()] = measurement[marker];
     });
 
     let dateString = `${moment(measurement.date).format("LL")} ${moment(
